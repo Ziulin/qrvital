@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Vital - Sua Saúde Sempre Acessível</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 123, 255, 0.6), rgba(0, 123, 255, 0.6)),
+                        url('https://portalhospitaisbrasil.com.br/wp-content/uploads/medico-2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 20px 20px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header h2 {
+            font-size: 1.5em;
+            color: #d1eaff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            color: #034f84;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .buttons a, .buttons button {
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            background-color: #0288d1;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .buttons a:hover, .buttons button:hover {
+            background-color: #01579b;
+        }
+
+        .decorative-images {
+            position: relative;
+            height: 150px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+
+        .decorative-images img {
+            position: absolute;
+            opacity: 0.3;
+            width: 120px;
+            height: auto;
+        }
+
+        .decorative-images img:nth-child(1) {
+            top: 10px;
+            left: 20px;
+        }
+
+        .decorative-images img:nth-child(2) {
+            top: 30px;
+            right: 20px;
+        }
+
+        .decorative-images img:nth-child(3) {
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+
+    <script>
+        function mostrarOpcoesLogin() {
+            document.getElementById('botoes-iniciais').style.display = 'none';
+            document.getElementById('botoes-login-tipo').style.display = 'flex';
+        }
+
+        function mostrarOpcoesCadastro() {
+            document.getElementById('botoes-iniciais').style.display = 'none';
+            document.getElementById('botoes-cadastro-tipo').style.display = 'flex';
+        }
+
+        function voltarInicio() {
+            document.getElementById('botoes-login-tipo').style.display = 'none';
+            document.getElementById('botoes-cadastro-tipo').style.display = 'none';
+            document.getElementById('botoes-iniciais').style.display = 'flex';
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>QR Vital</h1>
+        <h2>Sua Saúde Sempre Acessível</h2>
+    </header>
+
+    <div class="content">
+        <p>O QR Vital é um sistema inovador que permite ao usuário armazenar e organizar suas principais informações médicas com segurança e validação profissional. Através de um QR Code exclusivo, médicos e profissionais de saúde podem acessar de forma rápida e segura dados como alergias, tipo sanguíneo, doenças pré-existentes, medicações, contatos de emergência e muito mais.</p>
+
+        <p>Além disso, o QR Vital oferece uma agenda médica integrada, ajudando você a controlar seus exames, check-ups, consultas e vacinação. Tudo isso em uma plataforma simples, acessível e sempre ao seu alcance.</p>
+
+        <!-- Botões Iniciais -->
+        <div class="buttons" id="botoes-iniciais">
+            <button onclick="mostrarOpcoesLogin()">Entrar</button>
+            <button onclick="mostrarOpcoesCadastro()">Cadastrar</button>
+        </div>
+
+        <!-- Botões de Tipo de Login com Botão Voltar -->
+        <div class="buttons" id="botoes-login-tipo" style="display: none; flex-direction: column; align-items: center;">
+            <button onclick="voltarInicio()" style="margin-bottom: 15px; background-color: #ff5722;">← Voltar</button>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                <a href="loginmedico.html">Entrar como Médico</a>
+                <a href="loginpaciente.html">Entrar como Paciente</a>
+            </div>
+        </div>
+
+        <!-- Botões de Tipo de Cadastro com Botão Voltar -->
+        <div class="buttons" id="botoes-cadastro-tipo" style="display: none; flex-direction: column; align-items: center;">
+            <button onclick="voltarInicio()" style="margin-bottom: 15px; background-color: #ff5722;">← Voltar</button>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                <a href="cadastromedico.html">Cadastrar como Médico</a>
+                <a href="cadastropaciente.html">Cadastrar como Paciente</a>
+            </div>
+        </div>
+
+        <div class="decorative-images">
+            <img src="https://cdn-icons-png.flaticon.com/512/7596/7596871.png" alt="Icone Médico">
+            <img src="https://cdn-icons-png.flaticon.com/512/809/809957.png" alt="Estetoscópio">
+            <img src="https://cdn-icons-png.flaticon.com/512/241/241528.png" alt="QR Code Icon">
+        </div>
+    </div>
+
+</body>
+</html>
